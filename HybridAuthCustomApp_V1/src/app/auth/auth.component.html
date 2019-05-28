@@ -1,0 +1,67 @@
+<div class="internal-page-title">
+  {{pageTitle}}
+</div>
+
+<!--<div>Diagnostic output:</div>
+<div>appUser: {{appUser | json}}</div>
+<div>roleRequested: {{roleRequested}}</div>
+<div>authService.authSoftFailed: {{authService.authSoftFailed}}</div>
+<div>authService.authHardFailed: {{authService.authHardFailed}}</div>
+<div>userStore.hybridAuthFailed: {{userStore.hybridAuthFailed}}</div>
+<div>widgetToDisplay: {{widgetToDisplay}}</div>-->
+  
+
+<div *ngIf="widgetToDisplay == 'Login'">
+  <div class="col-12">
+    <div>You are not logged in or have been logged out due to inactivity.</div>
+    <div>Click button to login.  <button (click)="LoginButtonClicked()">Login</button></div>
+  </div>
+</div>
+<div *ngIf="widgetToDisplay == 'ConsentNeeded'">
+  <div class="col-12">
+    <div>For security purposes, an Administrator from your Organization may need to consent to this application.</div>
+    <div *ngIf="adminConsentLink">
+      <div>Please provide this link to your admin to allow access:</div>
+      <div><ul>
+        {{adminConsentLink}}
+      </ul></div>
+      <div>If you (or your administrator) have questions about this process, please notify the application administrator or click the Help link below.</div>
+    </div>
+  </div>
+</div>
+<div *ngIf="widgetToDisplay == 'Pending'">
+  <div class="col-12">
+    <div>Authorization Pending.  Please wait...</div>
+    <div>If this message remains on your screen, please notify the application administrator or click the Help link below.</div>
+  </div>
+</div>
+<div *ngIf="widgetToDisplay == 'HardFail'">
+  <div class="col-12">
+    <div>Error occurred during login.</div>
+    <div>Please notify the application administrator or click the Help link below.</div>
+  </div>
+</div>
+<div *ngIf="widgetToDisplay == 'Redirect'">
+  <div class="col-12">
+    <div>Login successful.  Please wait while your session is redirected or...</div>
+    <div *ngIf="returnLink"><div>Click <a routerLink="/{{returnLink}}">here</a> to proceed to the requested page.</div></div>
+    <div *ngIf="!returnLink"><div>Click <a routerLink="/home">here</a> to proceed to the home page.</div></div>
+  </div>
+</div>
+<div *ngIf="widgetToDisplay == 'RoleBad'">
+  <div class="col-12">
+    <div>Error:  The application page you attempted to reach is restricted to another security role.</div>
+    <div>If you feel you should have access to the requested page, please notify the application administrator or click the Help link below.</div>
+    <div>Click <a routerLink="/home">here</a> to return to the home page or click <a routerLink="/logout">here</a> to logout with the current account.</div>
+  </div>
+</div>
+
+<div class="waiting-message" *ngIf="displayWaitingMessage">
+  <div class="waiting-message">
+    <div class="cssload-container">
+      {{waitingMessage}}
+      <div class="cssload-whirlpool"></div>
+    </div>
+    <div><br /><br /></div>
+  </div>
+</div>

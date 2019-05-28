@@ -1,0 +1,24 @@
+<div class="internal-page-title">
+  <div>User:</div>
+</div>
+
+<h3>User from webservice:</h3>
+<div *ngIf="appUser">
+  <div id="userNameDisplay">
+    My user name is {{appUser.networkId}}
+  </div>
+</div>
+
+<div *ngIf="loadingUser && !appUser">
+  <div class="waitingMessage">
+    <div class="cssload-container">
+      Loading...
+      <div class="cssload-whirlpool"></div>
+    </div>
+    <div><br /><br /></div>
+  </div>
+</div>
+<div id="error-message-display" *ngIf="errorMessageVisible">
+  <p>Web service call failed.  Error message from API: {{errorMessage}}</p>
+</div>
+<div>This page demonstrates returning user data from database to API to service to component to template.</div>

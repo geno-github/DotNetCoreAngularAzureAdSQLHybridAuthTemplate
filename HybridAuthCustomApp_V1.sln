@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HybridAuthCustomApp_V1", "HybridAuthCustomApp_V1\HybridAuthCustomApp_V1.csproj", "{F9069F62-CC8F-4A5D-8721-982DC66704A3}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HybridAuthCustomApp_V1_DB", "HybridAuthCustomApp_V1_DB\HybridAuthCustomApp_V1_DB.sqlproj", "{3B3CC0D8-45B3-4607-BEC4-FFE86BA30653}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8FE9DEA3-1B5A-4B68-BEF0-BD712D41463F}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Production|Any CPU = Production|Any CPU
+		Release|Any CPU = Release|Any CPU
+		TST|Any CPU = TST|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9069F62-CC8F-4A5D-8721-982DC66704A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9069F62-CC8F-4A5D-8721-982DC66704A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9069F62-CC8F-4A5D-8721-982DC66704A3}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{F9069F62-CC8F-4A5D-8721-982DC66704A3}.Development|Any CPU.Build.0 = Development|Any CPU
+		{F9069F62-CC8F-4A5D-8721-982DC66704A3}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{F9069F62-CC8F-4A5D-8721-982DC66704A3}.Production|Any CPU.Build.0 = Production|Any CPU
+		{F9069F62-CC8F-4A5D-8721-982DC66704A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9069F62-CC8F-4A5D-8721-982DC66704A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9069F62-CC8F-4A5D-8721-982DC66704A3}.TST|Any CPU.ActiveCfg = TST|Any CPU
+		{F9069F62-CC8F-4A5D-8721-982DC66704A3}.TST|Any CPU.Build.0 = TST|Any CPU
+		{3B3CC0D8-45B3-4607-BEC4-FFE86BA30653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B3CC0D8-45B3-4607-BEC4-FFE86BA30653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B3CC0D8-45B3-4607-BEC4-FFE86BA30653}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3B3CC0D8-45B3-4607-BEC4-FFE86BA30653}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{3B3CC0D8-45B3-4607-BEC4-FFE86BA30653}.Development|Any CPU.Build.0 = Development|Any CPU
+		{3B3CC0D8-45B3-4607-BEC4-FFE86BA30653}.Development|Any CPU.Deploy.0 = Development|Any CPU
+		{3B3CC0D8-45B3-4607-BEC4-FFE86BA30653}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{3B3CC0D8-45B3-4607-BEC4-FFE86BA30653}.Production|Any CPU.Build.0 = Production|Any CPU
+		{3B3CC0D8-45B3-4607-BEC4-FFE86BA30653}.Production|Any CPU.Deploy.0 = Production|Any CPU
+		{3B3CC0D8-45B3-4607-BEC4-FFE86BA30653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B3CC0D8-45B3-4607-BEC4-FFE86BA30653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B3CC0D8-45B3-4607-BEC4-FFE86BA30653}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3B3CC0D8-45B3-4607-BEC4-FFE86BA30653}.TST|Any CPU.ActiveCfg = TST|Any CPU
+		{3B3CC0D8-45B3-4607-BEC4-FFE86BA30653}.TST|Any CPU.Build.0 = TST|Any CPU
+		{3B3CC0D8-45B3-4607-BEC4-FFE86BA30653}.TST|Any CPU.Deploy.0 = TST|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6444D12-0C98-4313-AF9D-7EAAFBC9789E}
+	EndGlobalSection
+EndGlobal

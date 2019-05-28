@@ -1,0 +1,83 @@
+<div class="internal-page-title">
+  App User:
+</div>
+<div class="waiting-message-container" *ngIf="displayWaitingMessage">
+  <div class="cssload-container">
+    {{waitingMessage}}
+    <div class="cssload-whirlpool"></div>
+  </div>
+  <div><br /><br /></div>
+</div>
+<div *ngIf="appUserForm">
+  <form [formGroup]="appUserForm" (ngSubmit)="OnSubmitButtonClick()" novalidate>
+    <div class="form-group">
+      <div class="row ui-fluid my-2">
+        <div class="col-md-2">
+          <label class="center-block">
+            <strong>User Email:</strong>
+          </label>
+        </div>
+        <div class="col-md-4">
+          <input type="email" pInputText formControlName="networkId"/>
+          <div *ngIf="(networkIdField.dirty || networkIdField.touched) && networkIdField.invalid">
+              <div *ngIf="networkIdField.errors.required" class="alert alert-danger">
+                  User Email is required.
+              </div>
+              <div *ngIf="networkIdField.errors.email" class="alert alert-danger">
+                  User Email must be valid email address.
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="row ui-fluid my-2">
+        <div class="col-md-2">
+          <label class="center-block">
+            <strong>Display Name:</strong>
+          </label>
+        </div>
+        <div class="col-md-4">
+          <input type="text" pInputText formControlName="displayName"/>
+        </div>
+      </div>
+      <div class="row ui-fluid my-2">
+        <div class="col-md-2">
+          <label class="center-block">
+            <strong>User Company Name:</strong>
+          </label>
+        </div>
+        <div class="col-md-4">
+          <input type="text" pInputText formControlName="companyName"/>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-2">
+          <label class="center-block">
+            <strong>User Role:</strong>
+          </label>
+        </div>
+        <div class="col-md-10">
+          <p-dropdown [options]="userRoleChoices"
+                      formControlName="userRole"
+                      optionLabel="roleName"
+                      placeholder="Select app user role">
+          </p-dropdown>
+          <div *ngIf="(userRoleField.dirty || userRoleField.touched) && userRoleField.invalid">
+              <div *ngIf="userRoleField.errors.required" class="alert alert-danger">
+                  User Role is required.
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row my-2">
+        <div class="col-12">
+          <button pButton type="submit" label="Save" [disabled]="appUserForm.pristine || appUserForm.status=='INVALID'"></button>
+          <button pButton type="button" (click)="OnCancelButtonClick()" label="Cancel" class="ui-button-secondary"></button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- <div>Diagnostics - remove</div>
+<div>appUser: {{appUserData | json}}</div> -->

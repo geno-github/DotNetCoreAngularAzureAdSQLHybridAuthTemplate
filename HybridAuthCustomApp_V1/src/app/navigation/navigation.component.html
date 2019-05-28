@@ -1,0 +1,39 @@
+<div class="navbar-container">
+  <nav class="navbar navbar-expand-xl navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="logo-container"><a class="navbar-brand corporate-logo" href="https://corporation.com"><img src="../../assets/images/corporate-logo.jpg" /></a></div>
+    <div class="collapse navbar-collapse navbar-links-container" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link app-link app-home-link" routerLinkActive="nav-is-active" routerLink="/home">App Home</a>
+        </li>
+        <li *ngIf="appUser && appUser.userRole.roleName == 'AdminUser'" class="nav-item dropdown">
+          <a class="nav-link app-link dropdown-toggle" href="#" id="navbarAdminDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Admin
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarAdminDropdownMenuLink">
+            <a class="dropdown-item" routerLink="/admin/app-users">Manage App Users</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.google.com">Google</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--<div class="search-container">
+    <div class="search-icon"><a data-toggle="collapse" data-target="#search-popup-outer-container"><span class="fa fa-search" aria-hidden="true"></span></a></div>
+    <div id="search-popup-outer-container" class="collapse">
+      <span class="search-popup-inner-container">
+        <span class="search-popup-input"><input class="search-popup-input-control-noscope" #searchPopupInputControl (keyup.enter)="SearchPopupSearchIconClicked()" (keyup)="SearchPopupInputKeyup(searchPopupInputControl.value)" /></span>
+      </span>
+      <span class="search-popup-search-icon-container" aria-hidden="true"><span class="search-popup-search-icon fa fa-search" (click)="SearchPopupSearchIconClicked()" aria-hidden="true"></span></span>
+      <div class="search-popup-close-icon"><a #searchPopupCloseLink data-toggle="collapse" data-target="#search-popup-outer-container"><span class="fa fa-close" aria-hidden="true"></span></a></div>
+    </div>
+  </div>-->
+  <div class="profile-container"><app-user-profile></app-user-profile></div>
+</div>
+<!-- TODO: remove this -->
+<!--<p>user: {{user | json}}</p>-->

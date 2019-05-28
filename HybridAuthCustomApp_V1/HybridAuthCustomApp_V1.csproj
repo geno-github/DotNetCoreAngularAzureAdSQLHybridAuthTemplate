@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <TypeScriptToolsVersion>3.3</TypeScriptToolsVersion>
+    <Configurations>Debug;Release;Development;TST;Production</Configurations>
+    <Description>Asp.Net Core C# API and Angular front-end application.  Uses hybrid Azure/SQL auth.</Description>
+    <Copyright>2019 - Geno Salvati</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <!--<TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>-->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LinqKit.Microsoft.EntityFrameworkCore" Version="1.1.15" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="4.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="API\v1\Configurations\" />
+    <Folder Include="API\v1\Enums\" />
+    <Folder Include="API\v1\Models\" />
+    <Folder Include="src\assets\favicons\" />
+    <Folder Include="src\assets\images\" />
+  </ItemGroup>
+
+</Project>

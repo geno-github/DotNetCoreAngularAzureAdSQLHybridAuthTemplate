@@ -1,0 +1,18 @@
+<div class="internal-page-title">
+  <div>Login:</div>
+</div>
+
+<div *ngIf="!authService.isAuthenticated">
+  <div class="waitingMessage">
+    <div class="cssload-container">
+      Please wait while your login request is redirected to Microsoft...
+      <div class="cssload-whirlpool"></div>
+    </div>
+    <div><br /><br /></div>
+  </div>
+</div>
+
+<div *ngIf="authService.isAuthenticated">
+  <div>You have been successfully logged into the application.  You should be redirected automatically.</div>
+  <div>Click <a [routerLink]="['/home']">here</a> to proceed to the home page.</div>
+</div>

@@ -1,0 +1,70 @@
+@import '../global-styles/_functions';
+@import '../global-styles/_breakpoints';
+@import '../global-styles/_constants';
+@import '../global-styles/_mixins';
+@import '../global-styles/_variables';
+
+.app {
+    font-family: $default-web-font;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: $default-background-color;
+    border-bottom: 1px solid $default-border-color;
+    z-index: 99;
+
+    @include media-breakpoint-up(xl) {
+        justify-content: center;
+    }
+}
+
+.main-content {
+    width: $content-max-width;
+    margin-top: 121px;
+    padding-right: $default-padding;
+    padding-left: $default-padding;
+    padding-bottom: $default-padding;
+    font-size: 14px;
+
+    @include media-breakpoint-up(lg2) {
+        border-left: 1px solid $default-border-color;
+        border-right: 1px solid $default-border-color;
+    }
+}
+
+.splitter-inner-container {
+    width: $content-max-width;
+
+    @include media-breakpoint-up(lg2) {
+        padding-right: $default-padding;
+        padding-left: $default-padding;
+        border-left: 1px solid $default-border-color;
+        border-right: 1px solid $default-border-color;
+    }
+}
+
+.splitter {
+    border-top: 1px solid $default-border-color;
+}
+
+.footer {
+    width: $content-max-width;
+    font-size: 12px;
+
+    @include media-breakpoint-up(lg2) {
+        border-left: 1px solid $default-border-color;
+        border-right: 1px solid $default-border-color;
+    }
+}
+
+.footer-content {
+    max-width: $content-max-width;
+    padding-top: $default-padding;
+    padding-bottom: $default-padding;
+    text-align: center;
+    font-size: 10px;
+}

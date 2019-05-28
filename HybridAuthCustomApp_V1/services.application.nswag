@@ -1,0 +1,69 @@
+﻿{
+  "runtime": "NetCore22",
+  "defaultVariables": null,
+  "swaggerGenerator": {
+    "fromSwagger": {
+      "json": "{\"swagger\":\"2.0\",\"info\":{\"version\":\"v1\",\"title\":\"Template API - V1\",\"description\":\"Hybrid Auth Template Version 1\",\"termsOfService\":\"All rights reserved\",\"contact\":{\"name\":\"Geno Salvati\",\"email\":\"geno-github@users.noreply.github.com\"},\"license\":{\"name\":\"Apache 2.0\",\"url\":\"http://www.apache.org/licenses/LICENSE-2.0.html\"}},\"paths\":{\"/api/v1/AppUser/GetAppUser\":{\"get\":{\"tags\":[\"AppUser\"],\"operationId\":\"GetAppUser\",\"consumes\":[],\"produces\":[\"text/plain\",\"application/json\",\"text/json\"],\"parameters\":[],\"responses\":{\"200\":{\"description\":\"Success\",\"schema\":{\"uniqueItems\":false,\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.AppUser\"}}}}}},\"/api/v1/AppUser/GetAppUser/{id}\":{\"get\":{\"tags\":[\"AppUser\"],\"operationId\":\"GetAppUser\",\"consumes\":[],\"produces\":[\"text/plain\",\"application/json\",\"text/json\"],\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"}],\"responses\":{\"200\":{\"description\":\"Success\",\"schema\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.AppUser\"}}}}},\"/api/v1/AppUser/GetAppUsers/{id}\":{\"get\":{\"tags\":[\"AppUser\"],\"operationId\":\"GetAppUsers\",\"consumes\":[\"application/json-patch+json\",\"application/json\",\"text/json\",\"application/*+json\"],\"produces\":[\"text/plain\",\"application/json\",\"text/json\"],\"parameters\":[{\"name\":\"ids\",\"in\":\"body\",\"required\":false,\"schema\":{\"uniqueItems\":false,\"type\":\"array\",\"items\":{\"format\":\"int32\",\"type\":\"integer\"}}},{\"name\":\"id\",\"in\":\"path\",\"required\":true,\"type\":\"string\"}],\"responses\":{\"200\":{\"description\":\"Success\",\"schema\":{\"uniqueItems\":false,\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.AppUser\"}}}}}},\"/api/v1/AppUser/GetAppUserByNetworkId/{networkId}\":{\"get\":{\"tags\":[\"AppUser\"],\"operationId\":\"GetAppUserByNetworkId\",\"consumes\":[],\"produces\":[\"text/plain\",\"application/json\",\"text/json\"],\"parameters\":[{\"name\":\"networkId\",\"in\":\"path\",\"required\":true,\"type\":\"string\"}],\"responses\":{\"200\":{\"description\":\"Success\",\"schema\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.AppUser\"}}}}},\"/api/v1/AppUser/PutAppUser/{id}\":{\"put\":{\"tags\":[\"AppUser\"],\"operationId\":\"PutAppUser\",\"consumes\":[\"application/json-patch+json\",\"application/json\",\"text/json\",\"application/*+json\"],\"produces\":[],\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"},{\"name\":\"appUser\",\"in\":\"body\",\"required\":false,\"schema\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.AppUser\"}}],\"responses\":{\"200\":{\"description\":\"Success\"}}}},\"/api/v1/AppUser/PostAppUser\":{\"post\":{\"tags\":[\"AppUser\"],\"operationId\":\"PostAppUser\",\"consumes\":[\"application/json-patch+json\",\"application/json\",\"text/json\",\"application/*+json\"],\"produces\":[\"text/plain\",\"application/json\",\"text/json\"],\"parameters\":[{\"name\":\"appUser\",\"in\":\"body\",\"required\":false,\"schema\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.AppUser\"}}],\"responses\":{\"200\":{\"description\":\"Success\",\"schema\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.AppUser\"}}}}},\"/api/v1/AppUser/PostSelfUpdate\":{\"post\":{\"tags\":[\"AppUser\"],\"operationId\":\"PostSelfUpdate\",\"consumes\":[\"application/json-patch+json\",\"application/json\",\"text/json\",\"application/*+json\"],\"produces\":[\"text/plain\",\"application/json\",\"text/json\"],\"parameters\":[{\"name\":\"appUser\",\"in\":\"body\",\"required\":false,\"schema\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.AppUser\"}}],\"responses\":{\"200\":{\"description\":\"Success\",\"schema\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.AppUser\"}}}}},\"/api/v1/AppUser/DeleteAppUser/{id}\":{\"delete\":{\"tags\":[\"AppUser\"],\"operationId\":\"DeleteAppUser\",\"consumes\":[],\"produces\":[\"text/plain\",\"application/json\",\"text/json\"],\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"}],\"responses\":{\"200\":{\"description\":\"Success\",\"schema\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.AppUser\"}}}}},\"/api/v1/AppUser/UpdateAppUserLastLoginDate/{id}\":{\"put\":{\"tags\":[\"AppUser\"],\"operationId\":\"UpdateAppUserLastLoginDate\",\"consumes\":[],\"produces\":[],\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"}],\"responses\":{\"200\":{\"description\":\"Success\"}}}},\"/api/v1/Diagnostic/GetEnvironment\":{\"get\":{\"tags\":[\"Diagnostic\"],\"operationId\":\"GetEnvironment\",\"consumes\":[],\"produces\":[\"text/plain\",\"application/json\",\"text/json\"],\"parameters\":[],\"responses\":{\"200\":{\"description\":\"Success\",\"schema\":{\"type\":\"string\"}},\"400\":{\"description\":\"Bad Request\",\"schema\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"string\"}}},\"404\":{\"description\":\"Not Found\",\"schema\":{\"type\":\"object\",\"additionalProperties\":{\"type\":\"string\"}}}}}},\"/api/v1/UserRole/GetUserRole\":{\"get\":{\"tags\":[\"UserRole\"],\"operationId\":\"GetUserRole\",\"consumes\":[],\"produces\":[\"text/plain\",\"application/json\",\"text/json\"],\"parameters\":[],\"responses\":{\"200\":{\"description\":\"Success\",\"schema\":{\"uniqueItems\":false,\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.UserRole\"}}}}}},\"/api/v1/UserRole/GetUserRole/{id}\":{\"get\":{\"tags\":[\"UserRole\"],\"operationId\":\"GetUserRole\",\"consumes\":[],\"produces\":[\"text/plain\",\"application/json\",\"text/json\"],\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"}],\"responses\":{\"200\":{\"description\":\"Success\",\"schema\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.UserRole\"}}}}},\"/api/v1/UserRole/GetUserRoleByName/{networkId}\":{\"get\":{\"tags\":[\"UserRole\"],\"operationId\":\"GetUserRoleByName\",\"consumes\":[],\"produces\":[\"text/plain\",\"application/json\",\"text/json\"],\"parameters\":[{\"name\":\"roleName\",\"in\":\"query\",\"required\":false,\"type\":\"string\"},{\"name\":\"networkId\",\"in\":\"path\",\"required\":true,\"type\":\"string\"}],\"responses\":{\"200\":{\"description\":\"Success\",\"schema\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.UserRole\"}}}}},\"/api/v1/UserRole/PutUserRole/{id}\":{\"put\":{\"tags\":[\"UserRole\"],\"operationId\":\"PutUserRole\",\"consumes\":[\"application/json-patch+json\",\"application/json\",\"text/json\",\"application/*+json\"],\"produces\":[],\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"},{\"name\":\"UserRole\",\"in\":\"body\",\"required\":false,\"schema\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.UserRole\"}}],\"responses\":{\"200\":{\"description\":\"Success\"}}}},\"/api/v1/UserRole/PostUserRole\":{\"post\":{\"tags\":[\"UserRole\"],\"operationId\":\"PostUserRole\",\"consumes\":[\"application/json-patch+json\",\"application/json\",\"text/json\",\"application/*+json\"],\"produces\":[\"text/plain\",\"application/json\",\"text/json\"],\"parameters\":[{\"name\":\"UserRole\",\"in\":\"body\",\"required\":false,\"schema\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.UserRole\"}}],\"responses\":{\"200\":{\"description\":\"Success\",\"schema\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.UserRole\"}}}}},\"/api/v1/UserRole/DeleteUserRole/{id}\":{\"delete\":{\"tags\":[\"UserRole\"],\"operationId\":\"DeleteUserRole\",\"consumes\":[],\"produces\":[\"text/plain\",\"application/json\",\"text/json\"],\"parameters\":[{\"name\":\"id\",\"in\":\"path\",\"required\":true,\"type\":\"integer\",\"format\":\"int32\"}],\"responses\":{\"200\":{\"description\":\"Success\",\"schema\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.UserRole\"}}}}}},\"definitions\":{\"HybridAuthCustomApp_V1.API.v1.Database.Context.AppUser\":{\"type\":\"object\",\"properties\":{\"id\":{\"format\":\"int32\",\"type\":\"integer\"},\"networkId\":{\"type\":\"string\"},\"displayName\":{\"type\":\"string\"},\"companyName\":{\"type\":\"string\"},\"userRoleId\":{\"format\":\"int32\",\"type\":\"integer\"},\"isActive\":{\"type\":\"boolean\"},\"createdBy\":{\"format\":\"int32\",\"type\":\"integer\"},\"createdOn\":{\"format\":\"date-time\",\"type\":\"string\"},\"lastModifiedDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"lastModifiedBy\":{\"format\":\"int32\",\"type\":\"integer\"},\"lastLoggedInDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"userRole\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.UserRole\"}}},\"HybridAuthCustomApp_V1.API.v1.Database.Context.UserRole\":{\"type\":\"object\",\"properties\":{\"id\":{\"format\":\"int32\",\"type\":\"integer\"},\"roleName\":{\"type\":\"string\"},\"isActive\":{\"type\":\"boolean\"},\"createdBy\":{\"format\":\"int32\",\"type\":\"integer\"},\"createdOn\":{\"format\":\"date-time\",\"type\":\"string\"},\"lastModifiedDate\":{\"format\":\"date-time\",\"type\":\"string\"},\"lastModifiedBy\":{\"format\":\"int32\",\"type\":\"integer\"},\"appUser\":{\"uniqueItems\":false,\"type\":\"array\",\"items\":{\"$ref\":\"#/definitions/HybridAuthCustomApp_V1.API.v1.Database.Context.AppUser\"}}}}},\"securityDefinitions\":{\"Bearer\":{\"name\":\"Authorization\",\"in\":\"header\",\"type\":\"apiKey\",\"description\":\"Please enter JWT with Bearer into field\"}},\"security\":[{\"Bearer\":[]}]}",
+      "url": "https://localhost:44355/swagger/v3/swagger.json",
+      "output": null
+    }
+  },
+  "codeGenerators": {
+    "swaggerToTypeScriptClient": {
+      "className": "ApplicationApiService",
+      "moduleName": "",
+      "namespace": "",
+      "typeScriptVersion": 2.7,
+      "template": "Angular",
+      "promiseType": "Promise",
+      "httpClass": "HttpClient",
+      "useSingletonProvider": true,
+      "injectionTokenType": "InjectionToken",
+      "rxJsVersion": 6.0,
+      "dateTimeType": "Date",
+      "nullValue": "Null",
+      "generateClientClasses": true,
+      "generateClientInterfaces": true,
+      "generateOptionalParameters": false,
+      "exportTypes": true,
+      "wrapDtoExceptions": true,
+      "clientBaseClass": null,
+      "wrapResponses": false,
+      "wrapResponseMethods": [],
+      "generateResponseClasses": true,
+      "responseClass": "SwaggerResponse",
+      "protectedMethods": [],
+      "configurationClass": null,
+      "useTransformOptionsMethod": false,
+      "useTransformResultMethod": false,
+      "generateDtoTypes": true,
+      "operationGenerationMode": "MultipleClientsFromOperationId",
+      "markOptionalProperties": true,
+      "generateCloneMethod": false,
+      "typeStyle": "Class",
+      "classTypes": [],
+      "extendedClasses": [],
+      "extensionCode": "",
+      "generateDefaultValues": true,
+      "excludedTypeNames": [],
+      "excludedParameterNames": [],
+      "handleReferences": false,
+      "generateConstructorInterface": false,
+      "convertConstructorInterfaceData": false,
+      "importRequiredTypes": true,
+      "useGetBaseUrlMethod": false,
+      "baseUrlTokenName": "API_BASE_URL",
+      "queryNullValue": "",
+      "inlineNamedDictionaries": false,
+      "templateDirectory": null,
+      "typeNameGeneratorType": null,
+      "propertyNameGeneratorType": null,
+      "enumNameGeneratorType": null,
+      "serviceHost": null,
+      "serviceSchemes": [
+        "https"
+      ],
+      "output": "src/app/application-api.service.ts"
+    }
+  }
+}

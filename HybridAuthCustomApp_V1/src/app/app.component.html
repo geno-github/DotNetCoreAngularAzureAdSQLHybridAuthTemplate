@@ -1,0 +1,28 @@
+<div class="container-fluid app">
+  <!-- header is full-page on all screens -->
+  <div class="row header">
+    <app-navigation></app-navigation>
+  </div>
+  <!--<p-growl [(value)]="msgs"></p-growl>-->
+  <div class="row justify-content-center main">
+    <p-toast></p-toast>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <!-- splitter appears on all screen sizes with a 20px gutter -->
+  <div class="row justify-content-center splitter-outer-container">
+    <div class="splitter-inner-container">
+      <div class="splitter">
+      </div>
+    </div>
+  </div>
+  <!-- footer is full-page on all screens -->
+  <div class="row justify-content-center">
+    <div class="footer">
+      <div class="footer-content">
+        <div id="footerDiv2">Copyright &copy; 2019 Geno Salvati. All Rights Reserved.</div>
+      </div>
+    </div>
+  </div>
+</div>

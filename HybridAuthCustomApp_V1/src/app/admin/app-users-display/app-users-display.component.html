@@ -1,0 +1,59 @@
+<div class="internal-page-title">
+  App Users:
+</div>
+<div class="waiting-message-container" *ngIf="displayWaitingMessage">
+  <div class="cssload-container">
+    {{waitingMessage}}
+    <div class="cssload-whirlpool"></div>
+  </div>
+  <div><br /><br /></div>
+</div>
+
+<p-confirmDialog header="Confirmation" icon="fa fa-question-circle" width="425"></p-confirmDialog>
+
+<div class="row" *ngIf="!displayWaitingMessage">
+  <div class="col-12">
+    <!--<p-table #au [value]="appUsers" sortField="appUsers.displayName">-->
+    <p-table #au [value]="appUsers">
+      <ng-template pTemplate="caption">
+        <div class="row">
+          <div class="col-6" style="text-align: left">
+            <button pButton type="button" (click)="OnAddNewClick()" label="Add New App User"></button>
+          </div>
+          <div class="col-6" style="text-align: right">
+            Role Filter:&nbsp;
+            <p-dropdown [options]="filterOptions" [style]="{'text-align':'left'}" (onChange)="au.filter($event.value, 'roleId', 'equals')"></p-dropdown>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th [pSortableColumn]="'networkId'">Network ID <p-sortIcon [field]="'networkId'"></p-sortIcon></th>
+          <th [pSortableColumn]="'displayName'" style="width:200px">Display Name <p-sortIcon [field]="'displayName'"></p-sortIcon></th>
+          <th [pSortableColumn]="'displayName'" style="width:200px">Company Name <p-sortIcon [field]="'companyName'"></p-sortIcon></th>
+          <th [pSortableColumn]="'userRole.roleName'" style="width:150px">Role <p-sortIcon [field]="'userRole.roleName'"></p-sortIcon></th>
+          <th style="width:50px;" class="text-center"></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-appUser>
+        <tr>
+          <td>{{appUser.networkId}}</td>
+          <td>{{appUser.displayName}}</td>
+          <td>{{appUser.companyName}}</td>
+          <td>{{appUser.userRole.roleName}}</td>
+          <td class="text-center">
+            <div>
+              <fa-icon [icon]="faEdit" (click)="OnEditClick(appUser)" class="icon-hover"></fa-icon>
+              <fa-icon [icon]="faTrashAlt" (click)="OnDeleteClick(appUser)" class="icon-hover"></fa-icon>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+<!--<div>Diagnostic - remove</div>
+<div>appUsers: {{appUsers | json}}</div>
+<div>userRoles: {{userRoles | json}}</div>-->
+

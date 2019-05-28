@@ -1,0 +1,65 @@
+@import '../../global-styles/_functions';
+@import '../../global-styles/_breakpoints';
+@import '../../global-styles/_constants';
+@import '../../global-styles/_mixins';
+@import '../../global-styles/_variables';
+@import '../../global-styles/styles.scss';
+
+.outer-container {
+    position: absolute;
+    top: 25px;
+    margin-left: -30px;
+}
+
+.profile-photo {
+    border-radius: 50%;
+}
+
+.default-profile-icon {
+    color: $corporate-bright-blue;
+    font-size: 24px;
+}
+
+.nophoto-profile-icon {
+    font-size: 12px;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-color: $corporate-bright-blue;
+    text-align: center;
+}
+
+.nophoto-profile-icon-large {
+    font-size: 48px;
+    display: inline-flex;
+}
+
+.nophoto-profile-text {
+    display: inline;
+    vertical-align: sub;
+}
+
+.nophoto-profile-text-link {
+    color: white;
+}
+
+.nophoto-profile-text-link:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.profile-dropdown-container {
+    position: absolute;
+    color: $corporate-blue;
+    background-color: $gray-200;
+    top: 68px;
+    right: 120px;
+    width: 300px;
+    height: auto;
+}
+
+.org-display-name-text {
+    display: inline;
+    font-weight: bold;
+    vertical-align: sub;
+}

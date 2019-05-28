@@ -1,0 +1,158 @@
+// mixins
+
+// note: parent must be width 100% and height 100% and position relative
+@mixin overlay($opacity: 0) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: $opacity;
+  transition: .5s ease;
+  overflow: hidden;
+}
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 48%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white) {
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}
+
+@mixin multiLineCarrotEllipsis($lineHeight: 1.2em, $lineCount: 1, $marginBottom: 1px, $bgColor: #ffffff, $carrotColor: #c34628) {
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount + 2;
+  /*text-align: justify;*/
+  margin-right: -1em;
+  padding-right: 1em;
+
+  &:before {
+    content: '>';
+    color: $carrotColor !important;
+    position: absolute;
+    margin-bottom: $marginBottom;
+    padding-left: 15px;
+    right: 16px;
+    bottom: 0;
+    /* add a gradient background */
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to($bgColor), color-stop(30%, $bgColor));
+    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), $bgColor 30%, $bgColor);
+    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), $bgColor 30%, $bgColor);
+    background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0), $bgColor 30%, $bgColor);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), $bgColor 30%, $bgColor);
+  }
+
+  &:hover:before {
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    width: 26px;
+    height: $lineHeight;
+    margin-top: -1px;
+    background: $bgColor;
+    /*z-index: -1;*/
+  }
+}
+
+@mixin multiLinePlusEllipsis($lineHeight: 1.2em, $lineCount: 1, $marginBottom: 1px, $bgColor: #ffffff, $iconColor: #c34628) {
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount + 2;
+  /*text-align: justify;*/
+  margin-right: -1em;
+  padding-right: 1em;
+
+  &:before {
+    content: '\f196';
+    font-family: 'FontAwesome';
+    color: $iconColor !important;
+    position: absolute;
+    margin-bottom: $marginBottom;
+    padding-left: 15px;
+    right: 16px;
+    bottom: 0;
+    /* add a gradient background */
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to($bgColor), color-stop(30%, $bgColor));
+    background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), $bgColor 30%, $bgColor);
+    background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), $bgColor 30%, $bgColor);
+    background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0), $bgColor 30%, $bgColor);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), $bgColor 30%, $bgColor);
+  }
+
+  &:hover:before {
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    width: 26px;
+    height: $lineHeight;
+    margin-top: -1px;
+    background: $bgColor;
+    /*z-index: -1;*/
+  }
+}
+
+@mixin multilineEllipsis($ellipsisColor: #000000, $backgroundColor: #ffffff, $bottomPosition: 20px, $leftPosition: 720px) {
+  /* Note:  Requires multiple wrapping DIVS with specific settings to work.  See hero spot for implementation.*/
+  color: $ellipsisColor;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  float: right;
+  position: relative;
+  margin-right: 1px;
+  height: 20px;
+  text-align: right;
+  /* set width of ellipsis.  width must equal margin-left */
+  width: 70px;
+  margin-left: -70px;
+  /* set ellipsis position */
+  bottom: $bottomPosition;
+  left: $leftPosition;
+  /* add a gradient background */
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), to($backgroundColor), color-stop(50%, $backgroundColor));
+  background: -moz-linear-gradient(to right, rgba(255, 255, 255, 0), $backgroundColor 50%, $backgroundColor);
+  background: -o-linear-gradient(to right, rgba(255, 255, 255, 0), $backgroundColor 50%, $backgroundColor);
+  background: -ms-linear-gradient(to right, rgba(255, 255, 255, 0), $backgroundColor 50%, $backgroundColor);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), $backgroundColor 50%, $backgroundColor);
+}

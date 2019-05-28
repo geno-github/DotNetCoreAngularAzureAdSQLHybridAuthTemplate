@@ -1,0 +1,16 @@
+<div class="internal-page-title">
+  <div>Logout:</div>
+</div>
+
+<div *ngIf="authService.isAuthenticated">
+  <div class="waitingMessage">
+    <div class="cssload-container">
+      Please wait while your logout request is redirected to Microsoft...
+      <div class="cssload-whirlpool"></div>
+    </div>
+    <div><br /><br /></div>
+  </div>
+</div>
+<div *ngIf="!(authService.isAuthenticated)">
+  <div>You have been successfully logged out of the application.  Click button to login again: <button (click)="LoginButtonClicked()">Login</button></div>
+</div>

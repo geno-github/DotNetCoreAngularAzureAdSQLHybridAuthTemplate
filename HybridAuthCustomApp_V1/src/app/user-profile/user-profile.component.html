@@ -1,0 +1,38 @@
+<div class="outer-container">
+  <div *ngIf="userProfilePhotoUrl"><a href="#profile-dropdown-container" data-toggle="collapse"><img class="profile-photo" [src]=userProfilePhotoUrl height="24" width="24" /></a></div>
+  <!--<div class="default-profile-icon"><i class="fa fa-user-circle"></i></div>-->
+  <div *ngIf="!userProfilePhotoUrl" class="nophoto-profile-icon">
+    <span *ngIf="!userInitials" class="nophoto-profile-text"><a href="#profile-dropdown-container" data-toggle="collapse"><span class="nophoto-profile-text-link">ME</span></a></span>
+    <span *ngIf="userInitials" class="nophoto-profile-text"><a href="#profile-dropdown-container" data-toggle="collapse"><span class="nophoto-profile-text-link">{{userInitials}}</span></a></span>
+  </div>
+</div>
+<div id="profile-dropdown-container" class="profile-dropdown-container collapse">
+  <div class="row p-2">
+    <div class="col-7 text-left">
+      <div *ngIf="userProfileOrganization" class="org-display-name-text">{{userProfileOrganization.displayName}}</div>
+    </div>
+    <div *ngIf="authService.isAuthenticated" class="col-5 text-right">
+      <button (click)="LogoutButtonClicked()">Logout</button>
+    </div>
+    <div *ngIf="!(authService.isAuthenticated)" class="col-5 text-right">
+      <button (click)="LoginButtonClicked()">Login</button>
+    </div>
+  </div>
+  <div *ngIf="userProfile" class="row p-2">
+    <div class="col-4 text-right">
+      <div *ngIf="userProfilePhotoUrl"><img class="profile-photo" [src]=userProfilePhotoUrl height="72" width="72" /></div>
+      <div *ngIf="!userProfilePhotoUrl" class="nophoto-profile-icon-large"><i class="fa fa-user-circle"></i></div>
+    </div>
+    <div class="col-8 text-left font-weight-normal">
+      <div class="font-weight-bold">{{userProfile.displayName}}</div>
+      <div class="text-truncate">{{userProfile.jobTitle}}</div>
+      <div class="text-truncate">{{userProfile.officeLocation}}</div>
+    </div>
+  </div>
+</div>
+
+<!--user profile: {{userProfile | json}}
+user profile organization: {{userProfileOrganization | json}}
+<div *ngIf="userProfilePhotoUrl">
+  user profile photo url: {{userProfilePhotoUrl}}
+</div>-->
